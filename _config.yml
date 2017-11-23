@@ -8,7 +8,7 @@ permalink:        pretty
 # Setup
 title:            Melvin Perera
 tagline:          'Ramblings and Thoughts'
-description:      'Welcome to my blog! This is just a quick blog which is a collection of projects that I have done.' #'A brazen two-column <a href="http://jekyllrb.com" target="_blank">Jekyll</a> theme that pairs a prominent sidebar with uncomplicated content. Made by <a href="https://twitter.com/mdo" target="_blank">@mdo</a>.'
+description:      'Welcome to my blog! This is a collection of projects that I have done.' #'A brazen two-column <a href="http://jekyllrb.com" target="_blank">Jekyll</a> theme that pairs a prominent sidebar with uncomplicated content. Made by <a href="https://twitter.com/mdo" target="_blank">@mdo</a>.'
 url:              http://hyde.getpoole.com
 #baseurl:          /
 
