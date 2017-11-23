@@ -47,7 +47,7 @@ So, how can we scale the frequency domain to match it better to our own percepti
 Therefore, for the spectrograms that were created, a mel scale is used to scale the frequency domains.
 
 Example code for generating mel-spectrograms on python:
-``` python
+```python
 scaler = MinMaxScaler()   # to be used to scale between values between 0 and 1
 
 for folder in os.listdir('fma_small'):
