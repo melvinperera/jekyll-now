@@ -3,7 +3,7 @@ layout: post
 title: Music Genre Analysis
 ---
 
-In this project, I explored the ability of convolutional neural networks to extract features from spectrograms of songs. A model was trained on these features to perform classification of their respective genres. 
+In this project, I explored the ability of convolutional neural networks to extract features from spectrograms of songs. I trained a model on these features to perform classification of their respective genres. 
 
 ## Project Motivation
 ---
@@ -20,6 +20,7 @@ Parties that would benefit most from robust models to extract audio information 
 
 Aside from the music industry, there could be significant benefits to be had with other industries. With this, it is possible that any audio could potentially be run through a similar model, and important features could be extracted and analysed or classified. 
 
+---
 ## Pre-Processing
 ---
 
@@ -44,7 +45,24 @@ You can try it out for yourself [here](http://www.szynalski.com/tone-generator/)
 
 So, how can we scale the frequency domain to match it better to our own perception of sound? A [Mel scale](https://en.wikipedia.org/wiki/Mel_scale) can be used for mapping on the frequency domain instead. It is a scale which utilises a quasi-logarithmic spacing to roughly resemble the way our auditory system resolves and perceives sound. This is important in the context of speech and music audio analysis, as these sounds are made for our own auditory system to perceive, and we want the analysis to be conducted on our own (_biased_) perception of sound.
 
-Therefore, for the spectrograms that were created in this notebook, a mel scale is used to scale the frequency domains.
+Therefore, for the spectrograms that were created, a mel scale is used to scale the frequency domains.
+
+{% highlight python %}
+// Example can be run directly in your JavaScript console
+
+// Create a function that takes two arguments and returns the sum of those arguments
+var adder = new Function("a", "b", "return a + b");
+
+// Call the function
+adder(2, 6);
+// > 8
+{% endhighlight %}
+
+---
+
+## Modelling
+
+After creating the models, I
 
 
 
