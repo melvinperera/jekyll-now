@@ -6,6 +6,7 @@ title: Music Genre Analysis
 In this project, I explored the ability of convolutional neural networks to extract features from spectrograms of songs. A model was trained on these features to perform classification of their respective genres. 
 
 ## Project Motivation
+---
 
 The feeling that we get when we listen to music - the very sound waves that vibrate our ear drums and fire up our brains in response - is as subjective as it gets. There are no two ways about it: one person might enjoy the soft and ethereal tunes of dream pop, while another would enjoy the intensity and power of industrial metal. Generally, _people tend to stick with and listen to just a few musical genres that they favour or have an affinity with_, be it pop, rock, jazz, or classical music, to name a few. 
 
@@ -20,6 +21,7 @@ Parties that would benefit most from robust models to extract audio information 
 Aside from the music industry, there could be significant benefits to be had with other industries. With this, it is possible that any audio could potentially be run through a similar model, and important features could be extracted and analysed or classified. 
 
 ## Pre-Processing
+---
 
 The audio files and related metadata are sourced from the Free Music Archive (FMA) Database, which contains a 900+ GiB library of 106,574 tracks of creative Commons-licensed audio from 16,341 artists and 14,854 albums, arranged in a hierarchical taxonomy of 161 genres. For this project, I decided to only utilize a fraction of the dataset. This fraction - found as 'fma_small' in the repository - consists of 8000 tracks of 30s each, with 8 balanced genre classes. This was useful as I would not have to worry about an unbalanced dataset.
 
@@ -27,7 +29,6 @@ The mel-spectrograms were created from the audio files themselves.
 
 ### Mel-Spectrograms
 
----
 
 #### Spectrograms
 A spectrogram is a visual representation of the spectrum of frequencies of sound (on the y-axis) as they vary with time (on the x-axis).
@@ -45,6 +46,6 @@ So, how can we scale the frequency domain to match it better to our own percepti
 
 Therefore, for the spectrograms that were created in this notebook, a mel scale is used to scale the frequency domains.
 
----
+
 
 
