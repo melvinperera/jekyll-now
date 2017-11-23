@@ -47,15 +47,24 @@ So, how can we scale the frequency domain to match it better to our own percepti
 
 Therefore, for the spectrograms that were created, a mel scale is used to scale the frequency domains.
 
+Example code for generating mel-spectrograms on python:
 {% highlight python %}
-// Example can be run directly in your JavaScript console
+scaler = MinMaxScaler()   # to be used to scale between values between 0 and 1
 
-// Create a function that takes two arguments and returns the sum of those arguments
-var adder = new Function("a", "b", "return a + b");
-
-// Call the function
-adder(2, 6);
-// > 8
+for folder in os.listdir('fma_small'):
+    if folder.startswith(('0','1')):
+        for filename in os.listdir('fma_small/'+ folder):
+            if filename.endswith('.mp3'):   
+                path = 'fma_small/' + folder + '/' + filename
+                file, sr = lib.core.load(path)  # This loads the audio file (mp3 in this case) into a 
+                                                # floating point time-series.
+                    
+                mel = lib.feature.melspectrogram(file, n_mels = 128)[:,:1024] # individual mel-spectrogram.
+                mel = lib.power_to_db(mel, ref=np.max) # converting to db units
+                melscaled = scaler.fit_transform(mel) # scaling
+                x = np.array(melscaled)
+                if x.shape == (128, 1024):            # enforcing dimensions
+                    x.dump("pickles/{}.pickle".format(filename[:-4]))    # saving melspecs into a pickle.
 {% endhighlight %}
 
 ---
