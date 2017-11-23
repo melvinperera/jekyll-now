@@ -296,13 +296,31 @@ Let's take a look at why Pop songs perform so poorly:
 It seems that instrumental songs are rarely ever considered pop songs, but the distribution looks similar for the rest of the genres (barring Rock songs). This implies that the pop genre is more of a meta-genre than other genres, borrowing elements from every other genre. Compare these plots with the plots of the International/Folk songs - the difference is definitely discernable.
 
 
-## Applications to proper music
+## Applications to the Beatles
+---
 
 I decided to mess around with my Beatles discography to see what I can uncover from this model. I sliced each audio file into separate spectrograms, with an average of 23.78s of music per slice. I ran it through my pretrained convnet with the finetuned
 ResNet50 architecture, and found the mean for the classifiers for each softmax classifier to get the classification for each track.
 
+You can find the notebook [here](https://github.com/melvinperera/Music-Genre-Analysis/blob/master/Notebooks/Beatles.ipynb).
 
-I decided to use the [T-distributed Stochastic Neighbour Embedding](http://scikit-learn.org/stable/modules/generated/sklearn.manifold.TSNE.html) on sklearn to reduce the dimensionality of the data to 2D for visualisation for the distances between songs. I then used plotly to plot a scatter plot of the T-SNE results with hover text.
+With that, I managed to get a 8-dimensional matrix of class predictions. In order to visualise these predictions, I 
+I decided to use the [T-distributed Stochastic Neighbour Embedding](http://scikit-learn.org/stable/modules/generated/sklearn.manifold.TSNE.html) on ```sklearn``` to reduce the dimensionality of the data to 2D for visualisation for the distances between songs. I then used plotly to plot a scatter plot of the T-SNE results with hover text. 
+
+<iframe src="https://plot.ly/~melvinperera/2.embed"
+        height="600" width="100%"
+        scrolling="no" seamless="seamless"
+        frameBorder="0">
+</iframe>
+
+Not too accurate... but still pretty cool. It gave me a chance to listen to some Beatles songs that I've never heard of before!
+
+## Conclusion
+---
+
+The accuracy of classifying the genres of audio tracks are almost 4x better than the baseline, at about 47%. Upon analysis of test dataset, I think that the labelling of the genres are quite subjective. For example, a rock-sounding song without any lyrics may actually be labelled as an instrumental song rather than a rock song. The subjectivity and ambiguity of music genres are being proven here! With a much larger dataset, maybe more general features will be learned that would identify between genres in a better fashion. 
+
+All in all, this was a really good experience for me in applying my faculties in deep learning. As my first project in convolutional neural networks, I think that I learned a lot from this experience and improved on my understanding many times over.
 
 
 
