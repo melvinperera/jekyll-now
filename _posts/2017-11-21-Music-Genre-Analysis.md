@@ -20,7 +20,6 @@ Parties that would benefit most from robust models to extract audio information 
 
 Aside from the music industry, there could be significant benefits to be had with other industries. With this, it is possible that any audio could potentially be run through a similar model, and important features could be extracted and analysed or classified. 
 
----
 ## Pre-Processing
 ---
 
@@ -48,7 +47,7 @@ So, how can we scale the frequency domain to match it better to our own percepti
 Therefore, for the spectrograms that were created, a mel scale is used to scale the frequency domains.
 
 Example code for generating mel-spectrograms on python:
-{% highlight python %}
+``` python
 scaler = MinMaxScaler()   # to be used to scale between values between 0 and 1
 
 for folder in os.listdir('fma_small'):
@@ -65,11 +64,11 @@ for folder in os.listdir('fma_small'):
                 x = np.array(melscaled)
                 if x.shape == (128, 1024):            # enforcing dimensions
                     x.dump("pickles/{}.pickle".format(filename[:-4]))    # saving melspecs into a pickle.
-{% endhighlight %}
+```
 
----
 
 ## Modelling
+---
 
 After creating the models, I
 
