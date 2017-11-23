@@ -296,6 +296,15 @@ Let's take a look at why Pop songs perform so poorly:
 It seems that instrumental songs are rarely ever considered pop songs, but the distribution looks similar for the rest of the genres (barring Rock songs). This implies that the pop genre is more of a meta-genre than other genres, borrowing elements from every other genre. Compare these plots with the plots of the International/Folk songs - the difference is definitely discernable.
 
 
+## Applications to proper music
+
+I decided to mess around with my Beatles discography to see what I can uncover from this model. I sliced each audio file into separate spectrograms, with an average of 23.78s of music per slice. I ran it through my pretrained convnet with the finetuned
+ResNet50 architecture, and found the mean for the classifiers for each softmax classifier to get the classification for each track.
+
+
+I decided to use the [T-distributed Stochastic Neighbour Embedding](http://scikit-learn.org/stable/modules/generated/sklearn.manifold.TSNE.html) on sklearn to reduce the dimensionality of the data to 2D for visualisation for the distances between songs. I then used plotly to plot a scatter plot of the T-SNE results with hover text.
+
+
 
 
 
